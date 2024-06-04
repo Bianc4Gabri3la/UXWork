@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Principal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleUserMenu() {
+            const userMenu = document.getElementById('user-menu');
+            userMenu.style.display = userMenu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.user-icon')) {
+                const userMenu = document.getElementById('user-menu');
+                if (userMenu.style.display === 'block') {
+                    userMenu.style.display = 'none';
+                }
+            }
+        }
+
+        function setFontSize(size) {
+            document.body.style.fontSize = size + 'px';
+        }
+
+        function setContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container main-container">
+        <header>
+            <div class="logo">Logotipo</div>
+            <input type="text" placeholder="Buscar..." aria-label="Buscar">
+            <div class="user-icon" onclick="toggleUserMenu()" aria-label="Opções do Usuário">Usuário</div>
+            <div class="settings-icon" aria-label="Configurações de Acessibilidade">
+                <button onclick="setFontSize(14)">A-</button>
+                <button onclick="setFontSize(18)">A+</button>
+                <button onclick="setContrast()">Contraste</button>
+            </div>
+        </header>
+        <div class="news-section">
+            <h3>Notícias/Propagandas</h3>
+            <!-- Conteúdo dinâmico de notícias/propagandas -->
+        </div>
+    </div>
+
+    <div id="user-menu" class="user-menu">
+        <a href="#">Atualizar Senha</a>
+        <a href="index.html">Sair</a>
+    </div>
+</body>
+
+</html>
