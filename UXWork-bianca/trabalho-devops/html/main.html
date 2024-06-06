@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Principal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px; /* Defina a altura desejada para a imagem */
+            margin-right: 10px; /* Ajuste o espaçamento conforme necessário */
+        }
+
+        .advertisement img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .advertisement h4 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .advertisement p {
+            font-size: 14px;
+        }
+
+        .news-section {
+            margin-top: 20px;
+        }
+
+        .news-item {
+            margin-bottom: 20px;
+        }
+
+        .news-item h5 {
+            margin-bottom: 5px;
+        }
+
+        .company-info {
+            margin-top: 20px;
+        }
+
+        .useful-links {
+            margin-top: 20px;
+        }
+
+        .useful-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .useful-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .user-menu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .user-menu a {
+            display: block;
+            padding: 5px 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .user-menu a:hover {
+            background-color: #f4f4f4;
+        }
+
+        .user-icon {
+            cursor: pointer;
+        }
+
+        .high-contrast {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            $('.carousel').carousel();
+
+            // Toggle user menu
+            $('.user-icon').click(function () {
+                $('.user-menu').toggle();
+            });
+
+            // Close user menu when clicking outside
+            $(document).mouseup(function (e) {
+                var container = $(".user-menu");
+                if (!container.is(e.target) && container.has(e.target).length === 0) {
+                    container.hide();
+                }
+            });
+
+            // Increase font size
+            document.getElementById('increase-font').addEventListener('click', function () {
+                var currentSize = parseInt(document.body.style.fontSize) || 16;
+                document.body.style.fontSize = (currentSize + 2) + 'px';
+            });
+
+            // Decrease font size
+            document.getElementById('decrease-font').addEventListener('click', function () {
+                var currentSize = parseInt(document.body.style.fontSize) || 16;
+                document.body.style.fontSize = (currentSize - 2) + 'px';
+            });
+
+            // Toggle contrast
+            var isHighContrast = false;
+            document.getElementById('toggle-contrast').addEventListener('click', function () {
+                isHighContrast = !isHighContrast;
+                if (isHighContrast) {
+                    document.body.classList.add('high-contrast');
+                } else {
+                    document.body.classList.remove('high-contrast');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container main-container">
+        <header>
+            <div class="logo">
+                <img src="https://w7.pngwing.com/pngs/361/627/png-transparent-leaf-logo-green-leaves-green-and-teal-leaf-logo-text-maple-leaf-grass.png" alt="Logotipo">
+                Eco Garden Decor
+            </div>
+            <input type="text" placeholder="Buscar..." aria-label="Buscar">
+            <div class="user-icon" aria-label="Opções do Usuário"><i class="fas fa-bars"></i></div>
+            <div class="settings-icon" aria-label="Configurações de Acessibilidade">
+                <button id="decrease-font">A-</button>
+                <button id="increase-font">A+</button>
+                <button id="toggle-contrast">Contraste</button>
+            </div>
+            <div class="user-menu">
+                <a href="#">Usuário</a>
+                <a href="#">Atualizar Senha</a>
+                <a href="index.html">Sair</a>
+            </div>
+        </header>
+        <div class="news-section">
+            <h3>Dicas de Decoração</h3>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="advertisement">
+                            <img src="plantas_decoracao.jpg" alt="Plantas para Decoração">
+                            <h4>Torne Seu Ambiente Mais Aconchegante com Plantas</h4>
+                            <p>Descubra como adicionar plantas à sua decoração pode criar um ambiente mais acolhedor e saudável. Veja nossas sugestões agora!</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="advertisement">
+                            <img src="iluminacao_sustentavel.jpg" alt="Iluminação Sustentável">
+                            <h4>Ilumine Seu Espaço com Luz Natural</h4>
+                            <p>Conheça as vantagens da iluminação natural e aprenda a aproveitar ao máximo a luz do sol na decoração de sua casa ou escritório.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="advertisement">
+                            <img src="mobiliario_eco_friendly.jpg" alt="Mobiliário Eco-friendly">
+                            <h4>Móveis Sustentáveis: Escolha Consciente</h4>
+                            <p>Explore opções de mobiliário feito com materiais sustentáveis e descubra como seus móveis podem ser eco-friendly e estilosos ao mesmo tempo.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="advertisement">
+                            <img src="tecnologia_inteligente_casa.jpg" alt="Tecnologia Inteligente para Casa">
+                            <h4>Tecnologia na Decoração: Inovação e Conforto</h4>
+                            <p>Descubra como a tecnologia pode ser integrada à decoração de sua casa para torná-la mais inteligente, eficiente e confortável.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="news-section">
+            <h3>Últimas Tendências</h3>
+            <div class="news-item">
+                <h5>Estilo Minimalista: Menos é Mais</h5>
+                <p>Explore o conceito do estilo minimalista e descubra como aplicá-lo na decoração de sua casa, criando ambientes limpos, funcionais e elegantes.</p>
+            </div>
+            <div class="news-item">
+                <h5>Cor do Ano: Greenery</h5>
+                <p>Conheça a cor Greenery, eleita pela Pantone como a cor do ano, e aprenda como incorporá-la à sua decoração para trazer frescor e vitalidade aos seus espaços.</p>
+            </div>
+        </div>
+
+        <div class="company-info">
+            <h3>Sobre Nossa Empresa</h3>
+            <p>Somos uma empresa dedicada a fornecer soluções de decoração para ambientes residenciais e comerciais. Nossa missão é tornar a decoração acessível e inspiradora para todos.</p>
+            <p>Trabalhamos com uma equipe de designers experientes e oferecemos uma ampla gama de produtos e serviços para atender às necessidades de nossos clientes.</p>
+        </div>
+
+        <div class="useful-links">
+            <h3>Links Úteis</h3>
+            <ul>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
