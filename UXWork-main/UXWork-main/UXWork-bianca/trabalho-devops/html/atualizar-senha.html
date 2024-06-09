@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Senha</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector('form');
+            const message = document.querySelector('.success-message');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); 
+
+              
+                message.style.display = 'block'; 
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container update-password-container">
+        <h2>Atualizar Senha</h2>
+        <form action="#" aria-labelledby="update-password-form">
+            <label for="Senha Antiga">Senha Antiga:</label>
+            <input type="password" id="oldPassword" placeholder="insira senha antiga" required aria-required="true" aria-label="Senha Antiga">
+            
+            <label for="Nova Senha">Senha Nova:</label>
+            <input type="password" id="newPassword" placeholder="insira a nova senha" required aria-required="true" aria-label="Senha Nova">
+            
+            <button type="submit" aria-label="Atualizar Senha">Atualizar Senha</button>
+        </form>
+        <p class="success-message" style="display: none;">Senha alterada com sucesso!</p>
+    </div>
+</body>
+
+</html>
