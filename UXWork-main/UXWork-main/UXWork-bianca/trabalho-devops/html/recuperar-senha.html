@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector('form');
+            const message = document.querySelector('.success-message');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); 
+
+               
+                message.style.display = 'block'; 
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container recover-container">
+        <h2>Recuperar Senha</h2>
+        <form action="#" aria-labelledby="recover-form">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="E-mail" required aria-required="true" aria-label="E-mail">
+            <button type="submit" aria-label="Enviar">Enviar</button>
+        </form>
+        <p class="success-message" style="display: none;">Um e-mail foi enviado com instruções para redefinir a senha.</p>
+    </div>
+</body>
+
+</html>
